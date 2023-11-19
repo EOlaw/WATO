@@ -18,7 +18,11 @@ const passportLocal = require('passport-local')
 const User = require('./models/userModel')
 const dbUrl = process.env.DB_URL
 //Routes
-
+//const homeRoutes = require('./routes/homeRoute')
+const userRoutes = require('./routes/userRoute')
+//const productRoutes = require('./routes/productRoute')
+//const cartRoutes = require('./routes/cartRoute')
+//const orderRoutes = require('./routes/orderRoute')
 
 // Set up the database connection
 mongoose.connect(dbUrl);
@@ -76,11 +80,11 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/', homeRoutes)
+//app.use('/', homeRoutes)
 app.use('/user', userRoutes)
-app.use('/product', productRoutes)
+//app.use('/product', productRoutes)
 //app.use('/order', orderRoutes)
-app.use('/cart', cartRoutes)
+//app.use('/cart', cartRoutes)
 
 
 app.all('*', (req, res, next) => {
