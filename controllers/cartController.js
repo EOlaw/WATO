@@ -11,7 +11,7 @@ const cartController = {
             if (!cart) {
                 return res.json({ message: 'Cart is empty' });
             }
-            res.render('carts/viewcart', { cart });
+            res.render('carts/viewCart', { cart });
             //res.json(cart);
         } catch (error) {
             res.status(500).json({ error: error.message });
@@ -54,7 +54,7 @@ const cartController = {
             await cart.calculateCartTotals();
             // Save the new cart instance
             await cart.save();
-            res.redirect('/cart/viewcart');
+            res.redirect('/cart/viewCart');
             //res.json({ message: 'Product added to cart', cart });
         } catch (error) {
             res.status(500).json({ error: error.message });
