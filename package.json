@@ -2,7 +2,7 @@
   "name": "wato",
   "version": "1.0.0",
   "description": "Wato is an online e-commerce",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
