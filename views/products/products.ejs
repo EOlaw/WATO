@@ -1,0 +1,110 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+    /* Styling for the Product Listing Page */
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        border: 1px solid #e3e3e3;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .product-image {
+        width: 100%;
+        max-height: 222px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .card-title a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .card-text {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* Media Queries for Responsiveness */
+
+    /* For screens with a width of 1200px or more, display 3 columns */
+    @media (min-width: 1200px) {
+        .col-md-3 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+    }
+
+    /* For screens with a width between 768px and 1199px, display 2 columns */
+    @media (max-width: 1199px) and (min-width: 768px) {
+        .col-md-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    /* For screens with a width of 767px or less, display 1 column */
+    @media (max-width: 767px) {
+        .col-md-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .product-image {
+            max-height: auto;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1 class="my-4">Product Listing</h1>
+
+    <% if (products.length > 0) { %>
+        <div class="row">
+            <% products.forEach(product => { %>
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <% if (product.images.length > 0) { %>
+                            <img src="<%= product.images[0].url %>" class="card-img-top product-image" alt="Product Image">
+                        <% } else { %>
+                            <img src="https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg" class="card-img-top product-image" alt="Product Image">
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="/product/<%= product._id %>"><%= product.title %></a></h5>
+                            <p class="card-text">Price: $<%= product.price %></p>
+                            <p class="card-text">Category: <%= product.category %></p>
+                            <p class="card-text">Brand: <%= product.brand %></p>
+                            <!-- Add more product details as needed -->
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No products found.</p>
+    <% } %>
+</div>

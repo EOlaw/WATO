@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+
+    <title>Shopping Cart</title>
+
+    <h1>Your Shopping Cart</h1>
+
+    <% if (cart && cart.products.length > 0) { %>
+        <ul>
+            <% cart.products.forEach(product => { %>
+                <li>
+                    Product: <%= product.product %> <br>
+                    Quantity: <%= product.count %> <br>
+                    Color: <%= product.color %> <br>
+                    Price: $<%= product.price %> <br>
+                </li>
+            <% }); %>
+        </ul>
+
+        <p>Total: $<%= cart.cartTotal %></p>
+
+        <a href="/checkout">Proceed to Checkout</a>
+    <% } else { %>
+        <p>Your cart is empty.</p>
+    <% } %>
+

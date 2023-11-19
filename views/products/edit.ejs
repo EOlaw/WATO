@@ -1,0 +1,97 @@
+<% layout('layouts/boilerplate')%>
+
+    <title>Edit Product</title>
+    <style>
+        /* Add the provided CSS styles here */
+        .image-container {
+            position: relative;
+            margin: 0 auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .zoom {
+            width: 100%;
+            max-height: 400px;
+            position: relative;
+            cursor: zoom-in;
+            transition: transform 0.25s;
+        }
+
+        .zoom img {
+            width: 100%;
+            height: auto;
+        }
+
+        .thumbnails-img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-tools {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product-tools button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-tools button:hover {
+            background-color: #0056b3;
+        }
+
+        .product-tools a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #007BFF;
+        }
+
+        .product-tools a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+<div class="container">
+    <h1>Edit Product</h1>
+    <div class="row">
+        <!-- Left column for product image -->
+        <div class="col-md-6">
+            <h3>Product Image:</h3>
+            <img src="<%= product.images[0].url %>" alt="<%= product.title %> Image" style="max-width: 400px;"><br>
+        </div>
+        <!-- Right column for editing functions -->
+        <div class="col-md-6">
+            <form action="/product/<%= product._id %>/update?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                
+                <!-- Update form fields for the product -->
+                <label for="title">Title:</label>
+                <input type="text" name="title" value="<%= product.title %>"><br>
+
+                <label for="description">Description:</label>
+                <textarea name="description"><%= product.description %></textarea><br>
+
+                <label for="price">Price:</label>
+                <input type="number" name="price" value="<%= product.price %>"><br>
+
+                <!-- Add more form fields for product details as needed -->
+
+                <button type="submit">Update Product</button>
+            </form>
+            <a href="/product/<%= product._id %>">Back to Product</a>
+        </div>
+    </div>
+</div>
+

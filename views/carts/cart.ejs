@@ -1,0 +1,16 @@
+<!-- views/cart.ejs -->
+<% layout('layouts/boilerplate')%>
+
+<h1>Your Cart</h1>
+
+<ul>
+  <% cart.products.forEach(product => { %>
+    <li>
+      <strong><%= product.product.title %></strong>
+      <p>Quantity: <%= product.count %></p>
+      <p>Price: <%= product.price * product.count %></p>
+    </li>
+  <% }); %>
+</ul>
+
+<!-- Add more styling and formatting as needed -->

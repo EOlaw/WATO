@@ -1,0 +1,11 @@
+<!-- Inside your searchResults.ejs file -->
+<h2>Search Results for '<%= searchTerm %>'</h2>
+
+<% if (products.length === 0) { %>
+    <p>No results found.</p>
+<% } else { %>
+    <% products.forEach(product => { %>
+        <!-- Display product information as needed -->
+        <p><%= product.title %></p>
+    <% }); %>
+<% } %>

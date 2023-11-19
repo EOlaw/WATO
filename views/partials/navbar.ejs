@@ -1,0 +1,189 @@
+<!-- <div class="row align-items-center py-3 mt-4 mt-lg-0">
+      <div class="col-xl-2 col-md-3 mb-4 mb-md-0 col-12 text-center text-md-start">
+        <a href="/"><img src="your-logo.png" alt="Wato"></a>
+      </div>-->
+<style>
+ .autocomplete-results {
+  position: absolute;
+  top: calc(100% + 10px); /* Adjust the spacing as needed */
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none; /* Hide initially */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.autocomplete-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.autocomplete-results li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.autocomplete-results li a {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Make the entire list item clickable */
+}
+
+.autocomplete-results li:hover {
+  background-color: #f2f2f2;
+}
+
+</style>
+
+
+<!-- Header Section
+<header class="bg-light p-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="col-xxl-4 col-xl-5 col-lg-3 d-none d-lg-block">
+        <div class="d-flex align-items-center justify-content-between ms-4">
+          <!--Notification Icon
+          <div class="text-center">
+            <div class="dropdown">
+              <a href="#" class="text-reset mx-2 text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="lh-1">
+                  <div class="position-relative d-inline-block mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                    </svg>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      1
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </div>
+                  <p class="mb-0 d-none d-xl-block small">Notification</p>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg p-0">
+                <div>
+                  <h6 class="px-4 border-bottom py-3 mb-0">Notification</h6>
+                  <p class="mb-0 px-4 py-3 "><a href="#">Sign in</a> or <a href="#">register</a> in or so you don't have to enter your details every time</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Sign Up Link
+          <div class="ms-6 text-center">
+            <a href="/user/register" class="text-reset mx-2 text-decoration-none">
+              <div class="lh-1">
+                <div class="mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg>
+                </div>
+                <p class="mb-0 d-none d-xl-block small">Sign up</p>
+              </div>
+            </a>
+          </div>
+          <!-- My Orders Link
+          <div class="ms-6 text-center">
+            <a href="/" class="text-reset mx-2 text-decoration-none">
+              <div class="lh-1">
+                <div class="mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M8 1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                  </svg>
+                </div>
+                <p class="mb-0 d-none d-xl-block small">My Orders</p>
+              </div>
+            </a>
+          </div>
+      
+          <!-- Shopping Cart Icon
+          <div class="text-center ms-6">
+            <a href="/cart/viewcart" aria-controls="offcanvasRight" class="text-reset mx-2 text-decoration-none">
+              <div class="text-center ">
+                <div class="">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                </div>
+                <p class="mb-0 d-none d-xl-block small">Shopping Cart</p>
+              </div>
+            </a>
+          </div>
+          </div>
+      </div>
+  </div>
+</header>
+-->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Wato</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/product">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/product">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/contact-us">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/coming-soon">Coming Soon</a>
+        </li>
+      </ul>
+      <!-- Search Bar with Autocomplete -->
+      <form action="/product/autocomplete" method="get" class="d-flex form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" id="searchInput">
+        <div id="autocompleteResults" class="autocomplete-results"></div>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav ml-auto">
+        <% if(!currentUser) {%>
+        <li class="nav-item">
+          <a class="nav-link active" href="/user/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/user/register">Register</a>
+        </li>
+        <% } else {%>
+        <li class="nav-item">
+          <div class="btn-group">
+            <button type="button" class="btn btn-info">Welcome to Majidah, <%= currentUser.firstname %></button>
+            <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split me-2" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              <li><a class="dropdown-item" href="/account-setting">Setting</a></li>
+              <li><a class="dropdown-item" href="/purchase">Purchase</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <form action="/user/logout" class="d-flex">
+            <button class="btn btn-danger btn-block" class="form-control me-2">Logout</button>
+          </form>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
