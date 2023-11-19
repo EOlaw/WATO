@@ -21,8 +21,8 @@ const dbUrl = process.env.DB_URL
 const homeRoutes = require('./routes/homeRoute')
 const userRoutes = require('./routes/userRoute')
 const productRoutes = require('./routes/productRoute')
-const cartRoutes = require('./routes/cartRoute')
 const orderRoutes = require('./routes/orderRoute')
+const cartRoutes = require('./routes/cartRoute')
 
 // Set up the database connection
 mongoose.connect(dbUrl);
